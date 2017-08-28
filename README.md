@@ -1,6 +1,6 @@
 # Cornell Hacking Club Presentation Repository
 
-These presentations are powered by (Reveal.JS)[https://github.com/hakimel/reveal.js]
+These presentations are powered by [Reveal.JS](https://github.com/hakimel/reveal.js)
 
 Documentation is available there. I made a custom theme chc.css based on the default theme "blood".
 
