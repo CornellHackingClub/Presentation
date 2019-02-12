@@ -51,19 +51,42 @@
 	      <p>Simple example:</p>
 	      <code>
 void shell_function() {
+		      </code>
+		 	<code>
     system("/bin/bash");
+				</code>
+		 	<code>
 }
+		      </code>
+		 	<code>
 
 void vuln_function() {
+				</code>
+		 	<code>
     char name[32];
+				</code>
+		 	<code>
     printf("Enter your name:\n");
+				</code>
+		 	<code>
     gets(name);
+				</code>
+		 	<code>
     printf("Nice to meet you %s\n", name);
+				</code>
+		 	<code>
 }
-
+</code>
+		 	<code>
 int main() {
+				</code>
+		 	<code>
     vuln_function();
+				</code>
+		 	<code>
     return 0;
+				</code>
+		 	<code>
 }
 	      </code>
       </section>
