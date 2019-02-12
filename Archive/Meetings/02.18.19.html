@@ -93,9 +93,9 @@ int main() {
 
 			
 	<section>
-	      <p>The return address of `vuln_function` is stored on the stack and so is the buffer `name`. 
+		<p>The return address of <code>vuln_function</code> is stored on the stack and so is the buffer <code>name</code>. 
 	      Gets doesn’t check to make sure we aren’t writing outside of the buffer, so we can overwrite data on the stack. 
-	      If we overwrite it to point to the `shell_functions` address instead of the main function, 
+			If we overwrite it to point to the <code>shell_functions</code> address instead of the main function, 
 	      we now have remote code execution.</p>
       </section>		
 		      
