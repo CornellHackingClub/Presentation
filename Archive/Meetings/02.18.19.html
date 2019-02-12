@@ -34,16 +34,22 @@
 
       <section>
           <h2>Pwning</h2>
-	      <p>Daniel’s informal definition of pwning: 
-	      take a vulnerable service and turn it into your personal terminal for the machine.</p>
+      </section>	      
+		      		       
+      <section>
+	     <p>Daniel’s informal definition of pwning: 
+	      take a vulnerable service and turn it into your personal terminal for the machine.</p> 
+      </section>
+		      
+       <section>
 	      <p>If you’ve taken 3410 you’ve already pwned a vulnerable binary: buffer overflow. 
 	      The most common exploit is a buffer overflow attack, 
 	      which lets you write data to memory that you shouldn’t be able to.</p>
+      </section>
+			
+	 <section>
 	      <p>Simple example:</p>
 	      <code>
-#include <stdio.h>
-#include <stdlib.h>
-
 void shell_function() {
     system("/bin/bash");
 }
@@ -60,10 +66,17 @@ int main() {
     return 0;
 }
 	      </code>
+      </section>
+
+			
+	<section>
 	      <p>The return address of `vuln_function` is stored on the stack and so is the buffer `name`. 
 	      Gets doesn’t check to make sure we aren’t writing outside of the buffer, so we can overwrite data on the stack. 
 	      If we overwrite it to point to the `shell_functions` address instead of the main function, 
 	      we now have remote code execution.</p>
+      </section>		
+		      
+       <section>
 	      <p>For every vulnerability, people have come up with ways to mitigate them. Stack canaries, Position Independent Execution, etc.
 	      This means we have to be more creative when figuring out how we exploit these vulnerabilities.
 	      Also many different kinds of exploits that we can chain together to pwn the system: PLT and GOT overwrites, ROP chains, etc.</p>
