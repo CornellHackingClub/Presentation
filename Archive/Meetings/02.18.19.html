@@ -28,8 +28,35 @@
 				<h2>Reversing</h2>
 			</section>
 
-      <section>
+      <section id ="crypto">
           <h2>Crypto</h2>
+      </section>
+
+      <section>
+          <h3>Novelty Crypto</h3>
+          <ul>
+              <li> Steganography: Hiding secrets in plain sight.
+                  <p> Usually worth few points, often hidden inside of images or audio </p>
+              </li>
+              <li> Classical Ciphers
+                  <p> Ceaser Ciphers, One-Time-Pads, etc. Usually suceptible to statistical attacks</p>
+              </li>
+          </ul>
+      </section>
+
+      <section>
+          <h3> Modern Crypto </h3>
+          <ul>
+              <li> Symmetric Crypto: Block Ciphers, Stream Ciphers, Hash functions
+                  <p> AES: Look at "mode of operation". ECB: easy, CBC: Look for bit flipping attacks, CTR: look for IV reuse, GCM: Look for nonce reuse/bias
+              </li>
+              <li> Asymmetric Crypto: RSA, ECDSA, Diffe Hellman
+                  <ul>
+                      <li> RSA: padding oracles, shared factor, weak prime </li>
+                      <li> ECDSA/ECDHE: weak nonces, subgroup confinement
+                  </ul>
+              </li>
+          </ul>
       </section>
 
       <section>
