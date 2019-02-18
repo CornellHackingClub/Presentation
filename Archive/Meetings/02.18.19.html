@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Welcome Back | Cornell Hacking Club</title>
+	<title>CTF Intro | Cornell Hacking Club</title>
 
 	<link rel="stylesheet" href="../../css/reveal.css">
 	<link rel="stylesheet" href="../../css/theme/chc.css" id="theme">
@@ -45,6 +45,14 @@
       </section>
 
       <section>
+          <h3> Cracking Two-Time-Pads: </h3>
+          <p> If we have c1 = m1 ⊕ k and c2 = m2 ⊕ k then
+          </p>
+          <p>c1 ⊕ c2 = m1 ⊕ m2</p>
+          <p> Use crib-dragging to recover the individual messages </p>
+      </section>
+
+      <section>
           <h3> Modern Crypto </h3>
           <ul>
               <li> Symmetric Crypto: Block Ciphers, Stream Ciphers, Hash functions
@@ -57,6 +65,16 @@
                   </ul>
               </li>
           </ul>
+      </section>
+
+      <section>
+          <h3> RSA shared-prime attack </h3>
+          <p>Assume you have two public keys, n1 and n2. Factoring either key takes exponential time, but GCD is efficient</p>
+          <p>If n1 and n2 share a factor, we can do gcd(n1,n2) = p. Then n1 = p*(n1/p) and n2 = p*(n2/p)</p>
+      </section>
+
+      <section>
+          Practice: <a href="https://cryptopals.com">cryptopals.com</a>
       </section>
 
       <section>
@@ -91,10 +109,17 @@
 	      <p>For every vulnerability, people have come up with ways to mitigate them. Stack canaries, Position Independent Execution, etc.
 	      This means we have to be more creative when figuring out how we exploit these vulnerabilities.
 	      Also many different kinds of exploits that we can chain together to pwn the system: PLT and GOT overwrites, ROP chains, etc.</p>
-      </section>
+       </section>
 
       <section>
           <h2>MITRE CTF Details</h2>
+          <ul>
+              <li> Friday 2pm - Saturday 2pm </li>
+              <li> <a href="https://mitrestemctf.org">mitrestemctf.org</a> </li>
+              <li> Room TBD </li>
+              <li> Poll: when do people want to meet? </li>
+              <li> Practice: <a href="https://github.com/mitre-cyber-academy">github.com/mitre-cyber-academy</a></li>
+          </ul>
       </section>
 	</div>
 	<script src="../../js/reveal.js"></script>
