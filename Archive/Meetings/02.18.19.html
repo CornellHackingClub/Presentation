@@ -25,6 +25,50 @@
 			</section>
 
 			<section>
+				<h3>Basic web vulnerabilities</h3>
+				<ul>
+					<li>SQL Injection</li>
+					<li>Sensitive data exposure</li>
+					<li>Cross Site Scripting</li>
+					<li>Components with know security vulnerabilities</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>SQL Injection</h3>
+				<cite>(XKCD #327)</cite><br>
+				<img src="exploits_of_a_mom.png" alt="XKCD Comic"><br>
+				<img src="sql_injection_example.png" alt="SQL Injection Example"><br>
+			</section>
+
+			<section>
+				<h3>Sensitive data exposure</h3>
+				<ul>
+					<li>Generally letting attackers access things they shouldn't be able to</li>
+					<li>Exposed API</li>
+					<li>Password file in web directory</li>
+					<li>Serving .git or similar in web directory</li>
+				</ul>
+			</section>
+
+			<section>
+				<h3>Cross Site Scripting</h3>
+				<ul>
+					<li>If user input is unsanitized and posted to website you can inject scripting into it</li>
+				</ul>
+				<br><br>
+				Example:<br>
+				<code style="font-size: .75em">
+					My name&lt;script>alert("You've been hacked!")&lt;/script>
+				</code>
+			</section>
+
+			<section>
+				<h3>Components with know security vulnerabilities</h3>
+				<img src="wordpress_vulnerabilities.png" alt="Wordpress Vulnerabilities">
+			</section>
+
+			<section>
 				<h2>Reversing</h2>
 			</section>
 
@@ -79,32 +123,32 @@
 
       <section>
           <h2>Pwning</h2>
-      </section>	      
-		      		       
-      <section>
-	     <p>Daniel’s informal definition of pwning: 
-	      take a vulnerable service and turn it into your personal terminal for the machine.</p> 
       </section>
-		      
+
+      <section>
+	     <p>Daniel’s informal definition of pwning:
+	      take a vulnerable service and turn it into your personal terminal for the machine.</p>
+      </section>
+
        <section>
-	      <p>If you’ve taken 3410 you’ve already pwned a vulnerable binary: buffer overflow. 
-	      The most common exploit is a buffer overflow attack, 
+	      <p>If you’ve taken 3410 you’ve already pwned a vulnerable binary: buffer overflow.
+	      The most common exploit is a buffer overflow attack,
 	      which lets you write data to memory that you shouldn’t be able to.</p>
       </section>
-			
+
 	 <section>
 	      <p>Simple example</p>
 		<img src="vuln_code.png">
       </section>
 
-			
+
 	<section>
-		<p>The return address of <code>vuln_function</code> is stored on the stack and so is the buffer <code>name</code>. 
-	      Gets doesn’t check to make sure we aren’t writing outside of the buffer, so we can overwrite data on the stack. 
-			If we overwrite it to point to the <code>shell_functions</code> address instead of the main function, 
+		<p>The return address of <code>vuln_function</code> is stored on the stack and so is the buffer <code>name</code>.
+	      Gets doesn’t check to make sure we aren’t writing outside of the buffer, so we can overwrite data on the stack.
+			If we overwrite it to point to the <code>shell_functions</code> address instead of the main function,
 	      we now have remote code execution.</p>
-      </section>		
-		      
+      </section>
+
        <section>
 	      <p>For every vulnerability, people have come up with ways to mitigate them. Stack canaries, Position Independent Execution, etc.
 	      This means we have to be more creative when figuring out how we exploit these vulnerabilities.
